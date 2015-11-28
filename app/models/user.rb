@@ -3,8 +3,7 @@ class User
   include RoleModel
   include AccessibleAttributes
 
-  attr_accessible :email, :password, :password_confirmation, :business_name
-
+  attr_accessible :email, :password, :password_confirmation, :business_name, :address_line_1, :address_line_2, :suburb, :postcode, :state
   # has_one :reseller
 
   # IMPORTANT:
@@ -52,6 +51,29 @@ class User
   field :last_sign_in_ip,    :type => String
 
   field :business_name, type: String
+  validates :business_name,
+    presence: true
+
+  field :address_line_1, type: String
+  validates :address_line_1,
+    presence: true
+  field :address_line_2, type: String
+
+  field :suburb, type: String
+  validates :suburb,
+    presence: true
+
+  field :postcode, type: String
+  validates :postcode,
+    presence: true
+
+  field :state, type: String
+  validates :state,
+    presence: true
+
+  field :discount, type: Float
+  validates :discount,
+    presence: true
 
   has_many :cup_usages
 

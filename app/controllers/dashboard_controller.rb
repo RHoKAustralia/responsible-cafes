@@ -2,7 +2,8 @@ class DashboardController < ApplicationController
 
   def index
     authorize! :index, :dashboard
-    @cup_usages = CupUsage.where(user_id: params[:user_id]).sort(:date => 1)
+    @cafe = User.find(params[:user_id])
+    @cup_usages = CupUsage.where(user_id: params[:user_id]).sort(:month => 1)
   end
   
 end

@@ -5,20 +5,16 @@
   </div>
 
   <div class="form-actions">
-    <div class="container">
-    <div class="row">
-        <div class='col-sm-6'>
-           <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                    <%= f.text_field :date, class: 'form-control' %>
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-          </div>
-      </div>
-    </div>
+
+  <%= f.select :year, [Date.today.year, Date.today.year - 1, Date.today.year - 2],
+    prompt: 'Year',
+    selected: Date.today.year
+    %>
+
+  <%= f.select :month, Date::MONTHNAMES.compact.each_with_index.collect{|m,i| [m,i]},
+    prompt: 'Month',
+    selected: Date.today.month - 1
+    %>
 
     <div>
       <%= f.label :reusable_cups %>
@@ -30,14 +26,12 @@
       <%= f.text_field :disposable_cups %>
     </div>
 
+
+    <div>
+      <%= f.label :dine_in_cups %>
+      <%= f.text_field :dine_in_cups %>
+    </div>
+
     <%= f.button :submit %>
   </div>
 <% end %>
-
-<script type="text/javascript">
-    $(function () {
-        $('#datetimepicker1').datetimepicker({
-          format: 'MMMM Do YYYY, h:mm:ss a'
-        });
-    });
-</script>

@@ -32,16 +32,7 @@ class Ability
      user.roles_mask = User.mask_for :guest
    end
 
-    # ENTRY
-    # ============================
-    can [:create, :show, :vote_up, :confirm_vote], Entry
-
-    can [:index], Entry if user.role_greater_or_equal_to? :reseller
-    can [:collected, :uncollected], Entry do |passed_entry|
-      reseller = passed_entry.reseller
-      user.role_greater_or_equal_to?(:reseller) && reseller.user_ids.contains(user.id)
-    end
-
+  
     # USER
     # ============================
     can [:create], User

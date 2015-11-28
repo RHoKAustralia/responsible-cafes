@@ -1,13 +1,91 @@
 <% @title = "Dashboard" %>
 
-<h1><%= current_user.business_name %>'s dashboard</h1>
-<p>Show coffee cup metrics here</p>
-<%= link_to 'Enter cup usage data', new_cup_usage_path %>
+<h1><%= @cafe.business_name %></h1>
+<%= link_to 'Enter cup usage data', new_cup_usage_path, class: 'btn btn-info' %>
 
-<% @cup_usages.each do |cup_usage| %>
-<div>
-  <p>date: <%= cup_usage.date %></p>
-  <p>reusable cups: <%= cup_usage.reusable_cups %></p>
-  <p>disposable cups: <%= cup_usage.disposable_cups %></p>
+
+<div class="dashboard__progress">
+  <h2>Our progress</h2>
+  <p>Our progress with cup reuse</p>
+  <div id="cup-usage-chart" style="height: 450px;"></div>
 </div>
-<% end %>
+
+<div class="dashboard__address">
+  <h2>Visit us</h2>
+  <div>
+  <% unless @cafe.address_line_1.blank? %>
+    <%= @cafe.address_line_1 %><br>
+  <% end %>
+  <% unless @cafe.address_line_2.blank? %>
+    <%= @cafe.address_line_2 %><br>
+  <% end %>
+  <% unless @cafe.suburb.blank? %>
+    <%= @cafe.suburb %><br>
+  <% end %>
+  <% unless @cafe.postcode.blank? %>
+    <%= @cafe.postcode %><br>
+  <% end %>
+  <% unless @cafe.state.blank? %>
+    <%= @cafe.state %><br>
+  <% end %>
+  </div>
+  <div class="dashboard__map"></div>
+</div>
+
+<script type="text/javascript">
+  new Morris.Line({
+  // ID of the element in which to draw the chart.
+  element: 'cup-usage-chart',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: [
+    <% @cup_usages.each do |cup_usage| %>
+      {
+        month: '<%= cup_usage.year %>-<%= cup_usage.month + 1 %>',
+        reusable: <%= cup_usage.reusable_cups %>,
+        disposable: <%= cup_usage.disposable_cups %>,
+        dine_in: <%= cup_usage.dine_in_cups %>,
+      },
+    <% end %>
+  ],
+  // The name of the data record attribute that contains x-values.
+  xkey: 'month',
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['reusable', 'disposable', 'dine_in'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ['Reusable cups', 'Dine in cups', 'Disposable cups'],
+  lineColors: ['#3eaa0e', '#acb604', '#e2b42a'],
+  xLabelFormat: function(x) {
+    return moment(x).format("MMM YY");
+  }
+});
+
+</script>
+
+<script>
+function initialize() {
+    var geocoder, map;
+    geocoder = new google.maps.Geocoder();
+    geocoder.geocode({
+        'address': '<%= cafe_address @cafe %>'
+    }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            var myOptions = {
+                zoom: 16,
+                center: results[0].geometry.location,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            map = new google.maps.Map(document.getElementsByClassName('dashboard__map')[0], myOptions);
+
+            var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location
+            });
+        }
+    });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>

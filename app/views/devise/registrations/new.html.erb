@@ -1,13 +1,26 @@
 <h2>Sign up</h2>
 
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name),html: { novalidate: false }) do |f| %>
   <%= f.error_notification %>
 
   <div class="inputs">
     <%= f.input :email, :required => true, :autofocus => true %>
-    <%= f.input :business_name, :required => true %>
-    <%= f.input :password, :required => true %>
-    <%= f.input :password_confirmation, :required => true %>
+    <%= f.input :business_name, required: true %>
+    <%= f.input :address_line_1, required: true %>
+    <%= f.input :address_line_2, required: true %>
+    <%= f.input :suburb, :required => true %>
+    <%= f.input :postcode, :required => true %>
+    <%= f.select :state, [
+          'New South Wales',
+          'Australian Capital Territory', 
+          'Queensland',
+          'South Australia',
+          'Tasmania',
+          'Victoria',
+          'Western Australia'
+        ], prompt: 'State', required: true %>
+    <%= f.input :password, required: true %>
+    <%= f.input :password_confirmation, required: true %>
   </div>
 
   <div class="actions">

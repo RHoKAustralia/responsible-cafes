@@ -2,6 +2,9 @@ LfdBootstrap::Application.routes.draw do
   # Static pages
   # =======================
   root :to => 'pages#home', :as => :page_home
+  
+  get 'aggregate' => 'pages#aggregate', :as => :page_aggregate
+  get 'cafes' => 'pages#cafes', :as => :page_cafes
 
   # Dashboard
   # =======================

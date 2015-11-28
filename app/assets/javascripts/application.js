@@ -12,11 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require natural_language
 //  require jquery.ui.all // See https://github.com/joliss/jquery-ui-rails for docs on including modules individually
 // require twitter/bootstrap
 // require bootstrap
+//= require raphael
 //= require moment
+//= require morris
 //= require bootstrap-datetimepicker
 //= require vendor
 //= require common
