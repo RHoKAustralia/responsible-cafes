@@ -1,0 +1,43 @@
+<%= simple_form_for(@cup_usage) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  </div>
+
+  <div class="form-actions">
+    <div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+           <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <%= f.text_field :date, class: 'form-control' %>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div>
+      <%= f.label :reusable_cups %>
+      <%= f.text_field :reusable_cups %>
+    </div>
+
+    <div>
+      <%= f.label :disposable_cups %>
+      <%= f.text_field :disposable_cups %>
+    </div>
+
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker({
+          format: 'MMMM Do YYYY, h:mm:ss a'
+        });
+    });
+</script>

@@ -1,0 +1,2 @@
+module CupUsagesHelper
+end

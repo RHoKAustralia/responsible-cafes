@@ -1,0 +1,21 @@
+<h1>Listing cup_usages</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cup_usages.each do |cup_usage| %>
+  <tr>
+    <td><%= link_to 'Show', cup_usage %></td>
+    <td><%= link_to 'Edit', edit_cup_usage_path(cup_usage) %></td>
+    <td><%= link_to 'Destroy', cup_usage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cup usage', new_cup_usage_path %>

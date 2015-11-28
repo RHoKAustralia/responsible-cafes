@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<%= render :partial => 'shared/head' %>
+</head>
+<body class="application-layout">
+  <div class="wrapper">
+  	<div class="container">
+  		<%= render :partial => 'shared/flash_message' %>
+  		<%= yield %>
+  	</div>
+    <div class="push"></div>
+  </div>
+
+  <div class="footer">
+	<%#= render :partial => 'shared/footer' %>
+  </div>
+</body>
+</html>

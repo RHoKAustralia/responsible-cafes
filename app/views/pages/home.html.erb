@@ -1,0 +1,14 @@
+<% @title = "Responsible cafes" %>
+<div class="home-container">
+  <header class="landing-header">
+    <h1>Responsible cafes</h1>
+    <h3>Something inspiring here</h3>
+  </header>
+
+  <% if user_signed_in? %>
+    <div><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></div>
+  <% else %>
+    <div><%= link_to 'Register', new_user_registration_path %></div>
+    <div><%= link_to 'Sign in', new_user_session_path %></div>
+  <% end %>
+</div>

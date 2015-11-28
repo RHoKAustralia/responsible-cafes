@@ -1,0 +1,13 @@
+<% @title = "Dashboard" %>
+
+<h1><%= current_user.business_name %>'s dashboard</h1>
+<p>Show coffee cup metrics here</p>
+<%= link_to 'Enter cup usage data', new_cup_usage_path %>
+
+<% @cup_usages.each do |cup_usage| %>
+<div>
+  <p>date: <%= cup_usage.date %></p>
+  <p>reusable cups: <%= cup_usage.reusable_cups %></p>
+  <p>disposable cups: <%= cup_usage.disposable_cups %></p>
+</div>
+<% end %>
