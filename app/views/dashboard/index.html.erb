@@ -1,36 +1,52 @@
 <% @title = "Dashboard" %>
 
-<h1><%= @cafe.business_name %></h1>
-<%= link_to 'Enter cup usage data', new_cup_usage_path, class: 'btn btn-info' %>
+<h1 class="dashboard__title"><%= @cafe.business_name %></h1>
+    <%= link_to 'Enter cup usage data', new_cup_usage_path, class: 'btn btn-info' if @cafe == current_user %>
 
+<div class="dashboard__cafe-details">
+  <div class="dashboard__cafe-information">
 
-<div class="dashboard__progress">
-  <h2>Our progress</h2>
-  <p>Our progress with cup reuse</p>
-  <div id="cup-usage-chart" style="height: 450px;"></div>
-</div>
+    <div class="dashboard__discount">
+      <p class="dashboard__discount-description">Save</p>
+      <p class="dashboard__discount-amount"><%= @cafe.discount %></p> 
+      <p class="dashboard__discount-description">when you bring your reusable cup</p>
+    </div>
 
-<div class="dashboard__address">
-  <h2>Visit us</h2>
-  <div>
-  <% unless @cafe.address_line_1.blank? %>
-    <%= @cafe.address_line_1 %><br>
-  <% end %>
-  <% unless @cafe.address_line_2.blank? %>
-    <%= @cafe.address_line_2 %><br>
-  <% end %>
-  <% unless @cafe.suburb.blank? %>
-    <%= @cafe.suburb %><br>
-  <% end %>
-  <% unless @cafe.postcode.blank? %>
-    <%= @cafe.postcode %><br>
-  <% end %>
-  <% unless @cafe.state.blank? %>
-    <%= @cafe.state %><br>
-  <% end %>
+    <div class="dashboard__address">
+        <h3 class="dashboard__address-heading">Find us</h3>
+        <% unless @cafe.address_line_1.blank? %>
+          <%= @cafe.address_line_1 %><br>
+        <% end %>
+        <% unless @cafe.address_line_2.blank? %>
+          <%= @cafe.address_line_2 %><br>
+        <% end %>
+        <% unless @cafe.suburb.blank? %>
+          <%= @cafe.suburb %><br>
+        <% end %>
+        <% unless @cafe.postcode.blank? %>
+          <%= @cafe.postcode %><br>
+        <% end %>
+        <% unless @cafe.state.blank? %>
+          <%= @cafe.state %><br>
+        <% end %>
+        <% unless @cafe.phone.blank? %>
+          <p class="dashboard__phone">Phone: <%= @cafe.phone %></p>
+        <% end %>
+    </div>
+
   </div>
-  <div class="dashboard__map"></div>
+  <div class="dashboard__progress">
+    <h4 class="dashboard__progress-title">Cup usage</h4>
+    <div id="cup-usage-chart" style="height: 450px;"></div>
+  </div>
 </div>
+
+
+  <div class="dashboard__map">
+    <div class="dashboard__map-graphic"></div>
+  </div>
+
+
 
 <script type="text/javascript">
   new Morris.Line({
@@ -76,7 +92,7 @@ function initialize() {
                 center: results[0].geometry.location,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             }
-            map = new google.maps.Map(document.getElementsByClassName('dashboard__map')[0], myOptions);
+            map = new google.maps.Map(document.getElementsByClassName('dashboard__map-graphic')[0], myOptions);
 
             var marker = new google.maps.Marker({
                 map: map,
@@ -87,5 +103,4 @@ function initialize() {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
-
 </script>

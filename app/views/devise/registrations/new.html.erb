@@ -10,6 +10,7 @@
     <%= f.input :address_line_2, required: true %>
     <%= f.input :suburb, :required => true %>
     <%= f.input :postcode, :required => true %>
+    <%= f.input :discount, :required => true, placeholder: '$0.10', hint: 'Discount given per come e.g. $0.20' %>
     <%= f.select :state, [
           'New South Wales',
           'Australian Capital Territory', 
@@ -29,3 +30,4 @@
 <% end %>
 
 <%= render "links" %>
+<div class="row">

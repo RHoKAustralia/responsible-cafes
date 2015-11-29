@@ -36,7 +36,7 @@ class Ability
     # USER
     # ============================
     can [:create], User
-    can [:index], :dashboard if user.role_greater_or_equal_to? :user
+    can [:index], :dashboard
 
     if user.role_greater_or_equal_to? :user
       can [:show, :update, :destroy], User do |passed_user|

@@ -70,8 +70,12 @@ class User
   field :state, type: String
   validates :state,
     presence: true
+    
+  field :phone, type: String
+  validates :phone,
+    presence: true
 
-  field :discount, type: Float
+  field :discount, type: String
   validates :discount,
     presence: true
 
