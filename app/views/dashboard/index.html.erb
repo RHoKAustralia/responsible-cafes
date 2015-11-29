@@ -6,12 +6,29 @@
 <div class="dashboard__cafe-details">
   <div class="dashboard__cafe-information">
 
+    <div class="dashboard__saved">
+      <p class="dashboard__saved-description">Total:</p>
+      <p class="dashboard__saved-amount"><%= @total_cups_saved %></p> 
+      <p class="dashboard__saved-description">cups saved from landfill</p>
+    </div>
+
     <div class="dashboard__discount">
       <p class="dashboard__discount-description">Save</p>
       <p class="dashboard__discount-amount"><%= @cafe.discount %></p> 
       <p class="dashboard__discount-description">when you bring your reusable cup</p>
     </div>
+  </div>
+  <div class="dashboard__progress">
+    <h4 class="dashboard__progress-title">Cup usage</h4>
+     <%= link_to '[Enter cup usage data]', new_cup_usage_path, class: 'dashboard__enter-data' if @cafe == current_user %>
+    <div id="cup-usage-chart" style="height: 450px;"></div>
+  </div>
+</div>
 
+
+
+
+<div class="dashboard__map">
     <div class="dashboard__address">
         <h3 class="dashboard__address-heading">Find us</h3>
         <% unless @cafe.address_line_1.blank? %>
@@ -33,18 +50,6 @@
           <p class="dashboard__phone">Phone: <%= @cafe.phone %></p>
         <% end %>
     </div>
-
-  </div>
-  <div class="dashboard__progress">
-    <h4 class="dashboard__progress-title">Cup usage</h4>
-     <%= link_to '[Enter cup usage data]', new_cup_usage_path, class: 'dashboard__enter-data' if @cafe == current_user %>
-    <div id="cup-usage-chart" style="height: 450px;"></div>
-  </div>
-</div>
-
-
-
-<div class="dashboard__map">
   <div class="dashboard__map-graphic"></div>
 </div>
 

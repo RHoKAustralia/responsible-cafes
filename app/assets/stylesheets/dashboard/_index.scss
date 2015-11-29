@@ -29,6 +29,20 @@
   background-color: #7371AD;
   color: #fff;
   padding: 30px;
+  margin-top: 1rem;
+}
+
+.dashboard__saved-amount {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.dashboard__saved {
+  width: 100%;
+  text-align: center;
+  background-color: #71AD97;
+  color: #fff;
+  padding: 30px;
   margin-top: 6rem;
 }
 
@@ -38,10 +52,6 @@
 
 .dashboard__address-heading {
   margin-top: 0;
-}
-
-.dashboard__discount-description {
-
 }
 
 .dashboard__cafe-information {
