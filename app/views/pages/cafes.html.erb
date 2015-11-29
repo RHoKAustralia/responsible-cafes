@@ -1,4 +1,4 @@
 <h1>Responsible cafes</h1>
 <% @cafes.each do |cafe| %>
-  <%= cafe.business_name %>
+  <%= link_to cafe.business_name, dashboard_path(cafe.id) %>
 <% end %>

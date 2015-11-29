@@ -1,7 +1,7 @@
 <% @title = "Dashboard" %>
+<%= link_to 'View other responsible cafes', page_cafes_path, class: 'dashboard__other-cafes' %>
 
 <h1 class="dashboard__title"><%= @cafe.business_name %></h1>
-    <%= link_to 'Enter cup usage data', new_cup_usage_path, class: 'btn btn-info' if @cafe == current_user %>
 
 <div class="dashboard__cafe-details">
   <div class="dashboard__cafe-information">
@@ -37,14 +37,16 @@
   </div>
   <div class="dashboard__progress">
     <h4 class="dashboard__progress-title">Cup usage</h4>
+     <%= link_to '[Enter cup usage data]', new_cup_usage_path, class: 'dashboard__enter-data' if @cafe == current_user %>
     <div id="cup-usage-chart" style="height: 450px;"></div>
   </div>
 </div>
 
 
-  <div class="dashboard__map">
-    <div class="dashboard__map-graphic"></div>
-  </div>
+
+<div class="dashboard__map">
+  <div class="dashboard__map-graphic"></div>
+</div>
 
 
 
