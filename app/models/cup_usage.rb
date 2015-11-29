@@ -3,7 +3,7 @@ class CupUsage
 
   field :year, :type => Integer
   field :month, :type => Integer
-  validates :year, uniqueness: {scope: :month}
+  validates :year, uniqueness: {scope: [:month, :user_id]}
   
   field :reusable_cups, :type => Integer
   field :disposable_cups, :type => Integer

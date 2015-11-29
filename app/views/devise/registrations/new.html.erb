@@ -6,11 +6,11 @@
   <div class="inputs">
     <%= f.input :email, :required => true, :autofocus => true %>
     <%= f.input :business_name, required: true %>
+    <%= f.input :phone, required: true %>
     <%= f.input :address_line_1, required: true %>
     <%= f.input :address_line_2, required: true %>
     <%= f.input :suburb, :required => true %>
     <%= f.input :postcode, :required => true %>
-    <%= f.input :discount, :required => true, placeholder: '$0.10', hint: 'Discount given per come e.g. $0.20' %>
     <%= f.select :state, [
           'New South Wales',
           'Australian Capital Territory', 
@@ -20,6 +20,7 @@
           'Victoria',
           'Western Australia'
         ], prompt: 'State', required: true %>
+    <%= f.input :discount, :required => true, placeholder: '$0.10', hint: 'Discount given per come e.g. $0.20' %>
     <%= f.input :password, required: true %>
     <%= f.input :password_confirmation, required: true %>
   </div>

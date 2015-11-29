@@ -3,7 +3,7 @@ class User
   include RoleModel
   include AccessibleAttributes
 
-  attr_accessible :email, :password, :password_confirmation, :business_name, :address_line_1, :address_line_2, :suburb, :postcode, :state
+  attr_accessible :email, :password, :password_confirmation, :business_name, :address_line_1, :address_line_2, :suburb, :postcode, :state, :discount, :phone
   # has_one :reseller
 
   # IMPORTANT:

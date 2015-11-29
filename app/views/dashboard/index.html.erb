@@ -19,14 +19,22 @@
     </div>
   </div>
   <div class="dashboard__progress">
-    <h4 class="dashboard__progress-title">Cup usage</h4>
-     <%= link_to '[Enter cup usage data]', new_cup_usage_path, class: 'dashboard__enter-data' if @cafe == current_user %>
-    <div id="cup-usage-chart" style="height: 450px;"></div>
+    <% if @cup_usages.present? %>
+      <h4 class="dashboard__progress-title">Cup usage</h4>
+      <%= link_to '[Enter cup usage data]', new_cup_usage_path, class: 'dashboard__enter-data' if @cafe == current_user %>
+      <div id="cup-usage-chart" style="height: 450px;"></div>
+    <% else %>
+      <div class="dashboard__no-data">
+        <% if @cafe == current_user %>
+            <p>You have no reusable cup usage data yet.</p>
+            <%= link_to 'Enter cup usage data', new_cup_usage_path, class: 'btn btn-info' %>
+        <% else %>
+            <p>This cafe doesn't have any reusable cup usage yet.</p>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
-
-
-
 
 <div class="dashboard__map">
     <div class="dashboard__address">
@@ -54,7 +62,7 @@
 </div>
 
 
-
+<% if @cup_usages.present? %>
 <script type="text/javascript">
   new Morris.Line({
   // ID of the element in which to draw the chart.
@@ -85,6 +93,7 @@
 });
 
 </script>
+<% end %>
 
 <script>
 function initialize() {
