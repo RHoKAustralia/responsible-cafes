@@ -10,3 +10,605 @@ body {
 strong {
   font-family: DINWeb-Bold;
 }
+
+
+
+
+
+/* Original Responsible Cafe's CSS */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, main {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+        list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+ }
+
+/* BASE STYLES */
+
+body {
+    height: 2000px;   
+    max-width: 100%;
+    margin: auto; 
+    
+}
+
+h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 70px;
+    line-height: 1.2;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    color: #F1F5DC;
+}
+
+h1 span {
+    font-size: 60px;
+    font-family: 'Pacifico', cursive;
+    color: #56C2C2;
+ 
+}
+
+h2 {
+	font-size: 30px;
+    font-family: 'Pacifico', cursive;
+    color: #56c2c2;
+    padding-bottom: 20px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 20px;
+    
+    
+}
+
+h3  {
+	
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+ 	color: #55c2c2;
+	font-size: 14pt;
+	line-height: 1.3;
+	margin-bottom: 10px;
+
+}
+
+p{
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+ 	color: #6e6e6e;
+	font-size: 13pt;
+	line-height: 1.3;
+	margin-bottom: 10px;
+	text-align: center;
+			
+}
+
+em {
+	font-style:italic;
+}
+
+a {
+    text-decoration: none;
+    color: #fa895c;
+}
+
+
+a:hover {
+    color: #55c2c2;
+}
+
+strong {
+	font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 13pt;
+    
+}
+
+.banner{
+	position: relative;
+	background-image: url(../img/responsible-cafes.jpg);
+	background-image: url(../img/orange-cup-banner2.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	background-size:cover;
+	text-align: center;
+	padding: 30px 0px;
+	
+	}
+
+.banner1{
+	position: relative;
+	background-image: url(../img/our-cafes.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	background-size:cover;
+	text-align: center;
+	padding: 100px 0px;
+	
+	}
+	
+.bannersmall{
+	width: 100%;
+	background-image: url(../img/responsible-cafes.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: cover;
+	text-align: center;
+}
+
+.bannersmall img{
+	opacity: 0.5;
+	}
+	
+.bannersmall1{
+	width: 100%;
+	background-image: url(../img/blur-cafe-yellow.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: cover;
+	text-align: center;
+}
+
+.bannersmall1 img{
+	opacity: 0.5;
+	}
+	
+img {
+    max-width: 100%;
+}
+
+.greybackgrd {
+	overflow: hidden;
+	width: 100%;
+	background-color: #f7f5f2;
+	padding-bottom: 50px;
+	
+}
+
+	
+
+/* NAV STYLING */
+
+nav {
+    position: fixed;
+    z-index: 9999;
+    background-color: #56C2C2;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.5);
+}
+
+nav ul{
+	margin: 0 auto;
+	overflow: hidden;
+	max-width: 600px;
+	height: 40px;
+	margin-top: 10px;
+}
+nav li {
+    float: left;
+    width: 25%;
+}
+nav a, nav a:visited {
+    display: block;
+    color: #F1F5DC;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    font-size: 12px;
+    text-align: center;
+}
+nav a:hover, nav a:active {
+    background-color: #fb895d;
+	color: #F1F5DC;
+}
+
+/* mobile */
+.mobile {
+  display: none;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  min-height: 50px;
+}
+
+.mobile .menu {
+  display: none;
+}
+
+.mobile a {
+  display: block;
+  font-size: 22px;
+  padding: 20px;
+}
+
+/* icon */
+.mobile .hamburger {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border: 0;
+  text-indent: 200%;
+  overflow: hidden;
+  background: rgba(255,255,255,0.8) url("http://i.imgur.com/vKRaKDX.png") center no-repeat;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-size: 80%;
+  width: 30px;
+  height: 30px;
+  -webkit-transition: all 400ms ease;
+          transition: all 400ms ease;
+}
+
+/* expanded */
+.expanded .hamburger {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  background-color: transparent;
+  border: 0;
+}
+
+.expanded .menu {
+	display: block;
+}
+
+
+/* MAIN */
+
+main {
+	overflow: auto;
+}
+
+main img {
+	width: 100%;
+}
+
+.thumbnail {
+	float: left;
+	margin: 0 1% 2% 1%;
+	width: 31.33333333%;
+
+}
+
+.thumbnail img {
+	width: 100%;
+	height: auto;
+}
+
+
+.project {
+    position: relative; 
+    float: left;
+    width: 31.428571428571%; /* 330px */
+    margin: 0 0.952380952381%; /* 0 10px */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.project img {
+    display: block;
+    
+}
+
+.project a:link, .project a:visited {
+    color: #ffffff;
+    font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	font-size: 14pt;
+    text-transform: uppercase;
+   
+}
+
+.overlay {
+    position: absolute; 
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #56c2c2; 
+    background-color: rgba(85, 194, 194, 0.84); 
+    opacity: 0;     padding-top: 30%; 
+    
+    -webkit-transition: all 0.3s ease-out; 
+     -moz-transition: all 0.3s ease-out; 
+       -o-transition: all 0.3s ease-out; 
+          transition: all 0.3s ease-out; 
+
+}
+.overlay:hover, .overlay:active { 
+    opacity: 1; 
+}
+
+
+.beans{
+	width: 75px;
+	margin: 0 auto;
+	
+}
+
+.center{
+	max-width: 900px;
+	margin: auto;
+
+		
+}
+
+
+.mainbodycopy,
+.supporter_logos {
+	overflow: hidden;
+	width: 60%;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	margin-top:25px;
+	text-align: center;
+	padding-top: 40px;
+	
+	}
+	
+.mainbodycopy ul {
+	list-style:disc;
+}
+	
+.mainbodycopy li {
+	line-height:2em;
+	font-family: 'Lato', sans-serif;
+	font-weight:bold;
+	list-style:disc;
+}
+
+.logo{
+	width: 30%;
+	margin: 0 auto;
+	transition: all 1s ease;
+
+}
+
+.logo1{
+	width: 20%;
+	margin: 0 auto;
+	transition: all 1s ease;
+
+}
+
+.contact{
+	overflow: hidden;
+	max-width: 900px;
+	margin: auto;
+	height: 100px;
+	padding-bottom: 500px;
+	
+}
+
+.one_half,
+.one_third {
+	border:1px solid #6e6e6e;
+	background-color:#ffffff;
+	float:left;
+}
+
+.one_half {
+	width:47%;
+	margin-right:2%;
+	margin-bottom:20px;
+}
+
+.one_third {
+	width:31.3%;
+	margin-right:1%;
+	margin-bottom:10px;
+}
+
+.last {
+	margin-right:0;
+}
+
+/* CONTACT FORM STYLES */
+
+#contact_form {
+	width: 550px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#contact_form input, #contact_form textarea, .inputs, {
+	padding: 5px;
+	width: 100%;
+	font-family: 'Lato', sans-serif;
+	font-size: 11pt;
+	margin: 0px 0px 10px 0px;
+	border: 1px solid #6e6e6e;
+}
+
+#contact_form textarea, .inputs textarea {
+	height: 90px;
+}
+
+#contact_form textarea:focus, #contact_form input:focus, .inputs input:focus, .inputs textarea:focus {
+	border: 1px solid #900;
+}
+
+#contact_form input.submit-button, .actions input.btn {
+	width: 250px;
+	float: right;
+	background-color: #fa895c;
+	border:2px solid #fa895c;
+	padding:15px;
+	color:#ffffff;
+	font-weight:500;
+}
+
+#contact_form input.submit-button:hover, .actions input.btn:hover {	
+	background-color: #fcad8d;
+	border:2px solid #fa895c;
+	cursor: pointer;
+}
+
+label {
+	font-family: 'Lato', sans-serif;	
+	text-align: left;
+	display:block;
+	margin-right: 15px;
+	padding-top: 5px;
+	padding-bottom:5px;
+	font-size: 11pt;
+	color: #6e6e6e;
+}
+
+.required {
+	color: #fa895c;
+	font-weight:bold;
+}
+
+
+
+/* FOOTER STYLES */
+
+footer {
+	border-top: 1px dotted #444;
+	border-bottom: 1px dotted #444;
+	text-align: center;
+	padding: 20px 0;
+	font-size: 10px;
+	font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    margin-top: 40px;
+    margin-bottom: 40px;
+	
+}
+
+/* TABLET STYLES */
+
+@media only screen and (max-width: 960px) {
+
+	
+	.logo{
+		width:40%;
+	}
+
+	.project {
+		width: 48%;
+	}
+	
+	#contact_form {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;	
+	}
+	
+}
+
+/* MOBILE STYLES */
+
+@media only screen and (max-width: 700px) {
+
+	
+	.project {
+		float: none;
+		width: 96%;
+		margin: 0 2% 2% 2%;	
+	}
+	
+	.logo{
+		width:60%;
+	}
+	
+	nav{
+		margin-bottom: 4%;
+	}
+	
+	#contact_form {
+		width: 90%;
+		margin: 0 5% 0 5%;	
+	}
+	
+	.one_half.last {
+		margin-bottom:50px;
+	}
+	
+	.one_half {
+		width:100%;
+	}
+	
+	.one_third {
+		width:80%;
+		margin-left:10%;
+		margin-right:10%;
+	}
+	
+}
+
+@media (max-width: 800px) {
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+}
+
+
+
+/* End Original Responsible Cafe's CSS */
+
