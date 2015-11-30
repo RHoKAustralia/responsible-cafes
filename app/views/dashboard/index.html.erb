@@ -1,7 +1,32 @@
 <% @title = "Dashboard" %>
-<%= link_to 'View other responsible cafes', page_cafes_path, class: 'dashboard__other-cafes' %>
+<%= link_to 'View other responsible cafes', page_home_path, class: 'dashboard__other-cafes' %>
 
 <h1 class="dashboard__title"><%= @cafe.business_name %></h1>
+<div class="dashboard-intro">
+  <div class="dashboard__cafe-about">
+    <%= simple_format @cafe.about %>
+  </div>
+  <div class="dashboard__intro-address">
+      <% unless @cafe.address_line_1.blank? %>
+        <%= @cafe.address_line_1 %><br>
+      <% end %>
+      <% unless @cafe.address_line_2.blank? %>
+        <%= @cafe.address_line_2 %><br>
+      <% end %>
+      <% unless @cafe.suburb.blank? %>
+        <%= @cafe.suburb %><br>
+      <% end %>
+      <% unless @cafe.postcode.blank? %>
+        <%= @cafe.postcode %><br>
+      <% end %>
+      <% unless @cafe.state.blank? %>
+        <%= @cafe.state %><br>
+      <% end %>
+      <% unless @cafe.phone.blank? %>
+        <p class="dashboard__phone">Phone: <%= @cafe.phone %></p>
+      <% end %>
+  </div>
+</div>
 
 <div class="dashboard__cafe-details">
   <div class="dashboard__cafe-information">
@@ -36,29 +61,30 @@
   </div>
 </div>
 
+
+<h3 class="dashboard__address-heading">Find us</h3>
 <div class="dashboard__map">
-    <div class="dashboard__address">
-        <h3 class="dashboard__address-heading">Find us</h3>
-        <% unless @cafe.address_line_1.blank? %>
-          <%= @cafe.address_line_1 %><br>
-        <% end %>
-        <% unless @cafe.address_line_2.blank? %>
-          <%= @cafe.address_line_2 %><br>
-        <% end %>
-        <% unless @cafe.suburb.blank? %>
-          <%= @cafe.suburb %><br>
-        <% end %>
-        <% unless @cafe.postcode.blank? %>
-          <%= @cafe.postcode %><br>
-        <% end %>
-        <% unless @cafe.state.blank? %>
-          <%= @cafe.state %><br>
-        <% end %>
-        <% unless @cafe.phone.blank? %>
-          <p class="dashboard__phone">Phone: <%= @cafe.phone %></p>
-        <% end %>
-    </div>
   <div class="dashboard__map-graphic"></div>
+  <div class="dashboard__address">
+      <% unless @cafe.address_line_1.blank? %>
+        <%= @cafe.address_line_1 %><br>
+      <% end %>
+      <% unless @cafe.address_line_2.blank? %>
+        <%= @cafe.address_line_2 %><br>
+      <% end %>
+      <% unless @cafe.suburb.blank? %>
+        <%= @cafe.suburb %><br>
+      <% end %>
+      <% unless @cafe.postcode.blank? %>
+        <%= @cafe.postcode %><br>
+      <% end %>
+      <% unless @cafe.state.blank? %>
+        <%= @cafe.state %><br>
+      <% end %>
+      <% unless @cafe.phone.blank? %>
+        <p class="dashboard__phone">Phone: <%= @cafe.phone %></p>
+      <% end %>
+  </div>
 </div>
 
 
@@ -82,11 +108,11 @@
   // The name of the data record attribute that contains x-values.
   xkey: 'month',
   // A list of names of data record attributes that contain y-values.
-  ykeys: ['reusable', 'disposable', 'dine_in'],
+  ykeys: ['reusable', 'dine_in', 'disposable'],
   // Labels for the ykeys -- will be displayed when you hover over the
   // chart.
   labels: ['Reusable cups', 'Dine in cups', 'Disposable cups'],
-  lineColors: ['#3eaa0e', '#acb604', '#e2b42a'],
+  lineColors: ['#3eaa0e', '#F7B20C', '#D41E1E'],
   xLabelFormat: function(x) {
     return moment(x).format("MMM YY");
   }

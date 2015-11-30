@@ -1,9 +1,0 @@
-
-
-<% @title = "Super lazy admin menu page!" %>
-
-<%= link_to 'Reseller sign up', new_user_registration_path %>
-<br>
-<%= link_to 'Admin Sign in', new_user_session_path %>
-<br>
-<%= link_to 'Admin dashboard', admin_dashboard_path, :if => Proc.new { user_signed_in? && current_user.role_greater_or_equal_to?(:admin)} %>

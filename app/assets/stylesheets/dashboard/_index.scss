@@ -1,7 +1,21 @@
 .dashboard__title {
-  font-size: 3em;
+  font-size: 10rem;
 }
-.dashboard__address {
+
+.dashboard-intro {
+  @include make-row;
+  padding-top: 3rem;
+}
+.dashboard__cafe-about {
+  @include make-md-column(9);
+  font-weight: bold;
+  line-height: 1.75;
+
+}
+.dashboard__intro-address {
+  @include make-md-column(3);
+  padding-left: 20px;
+  font-size: 13px;
 }
 
 .dashboard__map {

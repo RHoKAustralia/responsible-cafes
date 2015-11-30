@@ -1,14 +1,38 @@
+  <% if user_signed_in? %>
+    <div><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></div>
+  <% end %>
 <% @title = "Responsible cafes" %>
 <div class="home-container">
   <header class="landing-header">
-    <h1>Responsible cafes</h1>
-    <h3>Something inspiring here</h3>
+    <h1 class="home-page__heading">Responsible cafes</h1>
   </header>
 
-  <% if user_signed_in? %>
-    <div><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></div>
-  <% else %>
-    <div><%= link_to 'Register', new_user_registration_path %></div>
-    <div><%= link_to 'Sign in', new_user_session_path %></div>
+  <div class="home-page__statistics">
+    <div class="home-page__statistics__total-cafes">
+      <p class="home-page__statistics-amount"><%= @cafes.count %></p>
+      <p>Responsible cafes registered</p>
+    </div>
+    <div class="home-page__statistics__total-cups-saved">
+      <p class="home-page__statistics-amount"><%= @total_cups_saved %></p>
+      <p>Total cups saved from landfill</p>
+    </div>
+  <div class="home-page__statistics__total-cups-saved-last-month">
+    <p class="home-page__statistics-amount"><%= @total_cups_saved_last_month %></p>
+    <p>Cups saved last month</p>
+  </div>
+  </div>
+
+  <h2 class="home-page__visit-heading">Visit and support responsible cafes</h2>
+  <ul>
+  <% @cafes.each do |cafe| %>
+    <li><%= link_to cafe.business_name, dashboard_path(cafe.id) %></li>
   <% end %>
+  </ul>
 </div>
+
+  <% unless user_signed_in? %>
+    <div class="home-page__cta">
+      <%= link_to 'Become a responsible cafe, Register now', new_user_registration_path, class: 'btn btn-lg btn-info' %>
+      <p><%= link_to 'Sign in', new_user_session_path %></p>
+      </div>
+  <% end %>

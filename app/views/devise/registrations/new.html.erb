@@ -6,6 +6,7 @@
   <div class="inputs">
     <%= f.input :email, :required => true, :autofocus => true %>
     <%= f.input :business_name, required: true %>
+    <%= f.input :about, as: :text, required: true, placeholder: 'Tell us a little about your cafe' %>
     <%= f.input :phone, required: true %>
     <%= f.input :address_line_1, required: true %>
     <%= f.input :address_line_2, required: true %>

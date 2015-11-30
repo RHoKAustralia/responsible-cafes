@@ -1,0 +1,44 @@
+.home-page__heading {
+  text-align: center;
+  font-size: 18rem;
+}
+.home-page__statistics-amount {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.home-page__statistics__total-cups-saved-last-month,
+.home-page__statistics__total-cafes,
+.home-page__statistics__total-cups-saved {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  padding: 30px;
+  margin-top: 6rem;
+}
+
+.home-page__statistics {
+  @include make-row;
+}
+
+.home-page__statistics__total-cafes {
+  @include make-md-column(4);
+  background-color: #5AB7BB;
+}
+.home-page__statistics__total-cups-saved {
+  @include make-md-column(4);
+  background-color: #71AD97;
+}
+.home-page__statistics__total-cups-saved-last-month {
+  @include make-md-column(4);
+  background-color: #547368;
+}
+
+.home-page__visit-heading {
+  margin-top: 20px;
+  clear: both;
+}
+
+.home-page__cta {
+  text-align: center;
+}

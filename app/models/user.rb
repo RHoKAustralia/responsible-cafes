@@ -3,8 +3,19 @@ class User
   include RoleModel
   include AccessibleAttributes
 
-  attr_accessible :email, :password, :password_confirmation, :business_name, :address_line_1, :address_line_2, :suburb, :postcode, :state, :discount, :phone
-  # has_one :reseller
+  attr_accessible :email,
+    :password,
+    :password_confirmation,
+    :business_name,
+    :address_line_1,
+    :address_line_2,
+    :suburb,
+    :postcode,
+    :state,
+    :discount,
+    :phone,
+    :about
+
 
   # IMPORTANT:
   # Define available roles. Add any new role by APPENDING on the right. Otherwise
@@ -77,6 +88,10 @@ class User
 
   field :discount, type: String
   validates :discount,
+    presence: true
+
+  field :about, type: String
+  validates :about,
     presence: true
 
   has_many :cup_usages
