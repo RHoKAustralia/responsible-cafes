@@ -63,6 +63,21 @@
 
 
 <h3 class="dashboard__address-heading">Find us</h3>
+<% unless @cafe.website.blank? %>
+  <a class="website_link" href="<%= @cafe.website %>">Cafe Website</a>
+<% end %>
+<br>
+<% unless @cafe.facebook.blank? %>
+  <a class="facebook_link" href="<%= @cafe.facebook %>">facebook Account</a>
+<% end %>
+<br>
+<% unless @cafe.instagram.blank? %>
+  <a class="instagram_link" href="<%= @cafe.instagram %>">Instagram Account</a>
+<% end %>
+<br>
+<% unless @cafe.twitter.blank? %>
+  <a class="twitter_link" href="<%= @cafe.twitter %>">Twitter Handle</a>
+<% end %>
 <div class="dashboard__map">
   <div class="dashboard__map-graphic"></div>
   <div class="dashboard__address">

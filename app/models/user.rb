@@ -14,7 +14,12 @@ class User
     :state,
     :discount,
     :phone,
-    :about
+    :about,
+    :contact_person,
+    :website,
+    :facebook,
+    :instagram,
+    :twitter
 
 
   # IMPORTANT:
@@ -93,6 +98,18 @@ class User
   field :about, type: String
   validates :about,
     presence: true
+
+  field :contact_person, type: String
+  validates :contact_person,
+    presence: true
+
+  field :website, type: String
+
+  field :facebook, type: String
+
+  field :instagram, type: String
+
+  field :twitter, type: String
 
   has_many :cup_usages
 

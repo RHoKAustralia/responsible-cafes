@@ -21,11 +21,19 @@
           'Victoria',
           'Western Australia'
         ], prompt: 'State', required: true %>
+    <%= f.input :contact_person, :required => true %>
+    <br>
+    <%= f.input :website %>
+    <%= f.input :facebook, placeholder: 'https://www.facebook.com/ResponsibleCafes/?fref=ts' %>
+    <%= f.input :instagram, placeholder: 'https://instagram.com/responsiblecafes' %>
+    <%= f.input :twitter, placeholder: '@ResponsibleCafes' %>
+    <br>
     <%= f.input :discount, :required => true, placeholder: '$0.10', hint: 'Discount given per come e.g. $0.20' %>
+    <br>
     <%= f.input :password, required: true %>
     <%= f.input :password_confirmation, required: true %>
   </div>
-
+  <br>
   <div class="actions">
     <%= f.button :submit, "Sign up" %>
   </div>
