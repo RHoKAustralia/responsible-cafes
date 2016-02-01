@@ -1,5 +1,11 @@
 <% @title = "Dashboard" %>
 <%= link_to 'View other responsible cafes', page_home_path, class: 'dashboard__other-cafes' %>
+<br>
+<% if user_signed_in? %>
+<%    if current_user.email == @cafe.email %>
+<%= link_to 'Edit my cafe details', edit_user_registration_path %>
+<%    end %>
+<% end %>
 
 <h1 class="dashboard__title"><%= @cafe.business_name %></h1>
 <div class="dashboard-intro">
