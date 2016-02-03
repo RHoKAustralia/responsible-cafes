@@ -84,6 +84,12 @@
 <% unless @cafe.twitter.blank? %>
   <a class="twitter_link" href="<%= @cafe.twitter %>">Twitter Handle</a>
 <% end %>
+<br>
+<br>
+<% unless @cafe.motivation.blank? %>
+  <p class="dashboard__motivation-heading">Why we joined Responsible Cafes:</p>
+  <p class="dashboard__motivation"><%= @cafe.motivation %></p>
+<% end %>
 <div class="dashboard__map">
   <div class="dashboard__map-graphic"></div>
   <div class="dashboard__address">

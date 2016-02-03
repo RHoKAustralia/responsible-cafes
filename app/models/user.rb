@@ -19,7 +19,16 @@ class User
     :website,
     :facebook,
     :instagram,
-    :twitter
+    :twitter,
+    :motivation,
+    :postype,
+    :posreusablebutton,
+    :posreusablebuttondetails,
+    :posjoinprogram,
+    :posjoinprogramdetails,
+    :sustainstraws,
+    :sustainbags,
+    :sustaingrinds
 
 
   # IMPORTANT:
@@ -110,6 +119,24 @@ class User
   field :instagram, type: String
 
   field :twitter, type: String
+
+  field :motivation, type: String
+
+  field :postype, type: String
+
+  field :posreusablebutton, :type => Boolean, :default => false
+
+  field :posreusablebuttondetails, type: String
+
+  field :posjoinprogram, :type => Boolean, :default => false
+
+  field :posjoinprogramdetails, type: String
+
+  field :sustainstraws, :type => Boolean, :default => false
+
+  field :sustaingrinds, :type => Boolean, :default => false
+
+  field :sustainbags, :type => Boolean, :default => false
 
   has_many :cup_usages
 

@@ -5,12 +5,58 @@
 
   <div class="inputs">
     <%= f.input :email, :required => true, :autofocus => true %>    
+    <%= f.input :business_name, required: true %>
+    <%= f.input :about, as: :text, required: true, placeholder: 'Tell us a little about your cafe' %>
+    <%= f.input :phone, required: true %>
+    <%= f.input :address_line_1, required: true %>
+    <%= f.input :address_line_2, required: true %>
+    <%= f.input :suburb, :required => true %>
+    <%= f.input :postcode, :required => true %>
+    <br>
+    <%= f.select :state, [
+          'New South Wales',
+          'Australian Capital Territory', 
+          'Queensland',
+          'South Australia',
+          'Tasmania',
+          'Victoria',
+          'Western Australia'
+        ], prompt: 'State', required: true %>
     <%= f.input :contact_person, :required => true %>
+    <br>
+    <%= f.input :motivation, as: :text, placeholder: 'Tell us about your motivation for joining Responsible Cafes' %>
     <br>
     <%= f.input :website %>
     <%= f.input :facebook %>
     <%= f.input :instagram %>
     <%= f.input :twitter %>
+    <br>
+    <br>
+    <%= f.input :postype, :label => "Please specify what type of POS system you use (eg Vend, Kounta, Revel, cash register)." %>
+    <br>
+    <%= f.label "In your POS system, do you record the number of reusable cups served?" %>
+    <br>
+    <%= f.check_box :posreusablebutton %>
+    <%= f.input :posreusablebuttondetails, :label => "If yes, please provide details" %>
+    <br>
+    <%= f.label "Would you be willing to share reusable cup use information in a nationwide program?" %>
+    <br>
+    <%= f.check_box :posjoinprogram %>
+    <%= f.input :posjoinprogramdetails, :label => "If yes, please provide details" %>
+    <br>
+    <br>
+    <%= f.label "Give straws only on request, or provide only paper straws." %>
+    <br>
+    <%= f.check_box :sustainstraws %>
+    <br>
+    <%= f.label "Charge for plastic bags, or only provide recycled paper bags." %>
+    <br>
+    <%= f.check_box :sustainbags %>
+    <br>
+    <%= f.label "Compost coffee grinds." %>
+    <br>
+    <%= f.check_box :sustaingrinds %>
+    <br>
     <br>
     <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
     <%= f.input :password_confirmation, :required => false %>
