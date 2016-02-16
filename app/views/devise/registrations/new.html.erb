@@ -22,6 +22,8 @@
           'Victoria',
           'Western Australia'
         ], prompt: 'State', required: true %>
+    <br>
+    <br>
     <%= f.input :contact_person, :required => true %>
     <br>
     <%= f.input :motivation, as: :text, placeholder: 'Tell us about your motivation for joining Responsible Cafes' %>
@@ -31,8 +33,98 @@
     <%= f.input :instagram, placeholder: 'https://instagram.com/responsiblecafes' %>
     <%= f.input :twitter, placeholder: '@ResponsibleCafes' %>
     <br>
+    <br>
     <%= f.input :discount, :required => true, placeholder: '$0.10', hint: 'Discount given per come e.g. $0.20' %>
     <br>
+    <br>
+    <%= f.input :postype, :label => "Please specify what type of POS system you use (eg Vend, Kounta, Revel, cash register)." %>
+    <br>
+    <%= f.label "In your POS system, do you record the number of reusable cups served?" %>
+    <br>
+    <%= f.check_box :posreusablebutton %>
+    <%= f.input :posreusablebuttondetails, :label => "If yes, please provide details" %>
+    <br>
+    <%= f.label "Would you be willing to share reusable cup use information in a nationwide program?" %>
+    <br>
+    <%= f.check_box :posjoinprogram %>
+    <%= f.input :posjoinprogramdetails, :label => "If yes, please provide details" %>
+    <br>
+    <br>
+    <%= f.label "Gives straws only on request, or provides only paper straws." %>
+    <br>
+    <%= f.check_box :sustainstraws %>
+    <br>
+    <%= f.input :sustainstrawscomments, :label => "Additional comments" %>
+    <br>
+    <%= f.label "Charges for plastic bags, or only provides recycled paper bags." %>
+    <br>
+    <%= f.check_box :sustainbags %>
+    <br>
+    <%= f.input :sustainbagscomments, :label => "Additional Comments" %>
+    <br>
+    <%= f.label "Composts coffee grinds." %>
+    <br>
+    <%= f.check_box :sustaingrinds %>
+    <br>
+    <%= f.input :sustaingrindscomments, :label => "Additional comments" %>
+    <br>
+    <%= f.label "Actively favour locally grown or produced food & beverages." %>
+    <br>
+    <%= f.check_box :sustainbuylocal %>
+    <br>
+    <%= f.input :sustainbuylocalcomments, :label => "Additional comments" %>
+    <br>
+    <%= f.label "Favours reusable or sustainable cutlery over plastic." %>
+    <br>
+    <%= f.check_box :sustaincutlery %>
+    <br>
+    <%= f.input :sustaincutlerycomments, :label => "Additional comments" %>
+    <br>
+    <%= f.label "Stopped selling take away coffee unless it's in a reusable cup." %>
+    <br>
+    <%= f.check_box :sustaincups %>
+    <br>
+    <%= f.input :sustaincupscomments, :label => "Additional comments" %>
+    <br>
+    <%= f.label "Supports external sustainability initiatives in local community groups." %>
+    <br>
+    <%= f.check_box :sustainlocalsupport %>
+    <br>
+    <%= f.input :sustainlocalsupportcomments, :label => "Additional comments" %>
+    <br>
+    <%= f.label "Grows produce for use in the cafe." %>
+    <br>
+    <%= f.check_box :sustainhomegrown %>
+    <br>
+    <%= f.input :sustainhomegrowncomments, :label => "Additional comments" %>
+    <br>
+    <%= f.label "Actively tries to recycle everything possible." %>
+    <br>
+    <%= f.check_box :sustainrecycle %>
+    <br>
+    <%= f.input :sustainrecyclecomments, :label => "Additional comments" %>
+    <br>
+    <%= f.label "Diverts food waste away from landfills, via donations or composting." %>
+    <br>
+    <%= f.check_box :sustainfoodwaste %>
+    <br>
+    <%= f.input :sustainfoodwastecomments, :label => "Additional comments" %>
+    <br>
+    <%= f.label "Purchases electricity from renewable sources." %>
+    <br>
+    <a href="http://greenelectricityguide.org.au" target="_blank">Green Electricity Guide</a>
+    <br>
+    <%= f.check_box :sustainenergy %>
+    <br>
+    <%= f.input :sustainenergycomments, :label => "Additional comments" %>
+    <br>
+    <%= f.label "Banks with an institution that doesn't invest in fossil fuels." %>
+    <br>
+    <a href="http://www.marketforces.org.au/campaigns/bank" target="_blank">Market Forces: Banks</a>
+    <br>
+    <%= f.check_box :sustainfinance %>
+    <br>
+    <%= f.input :sustainfinancecomments, :label => "Additional comments" %>
     <br>
     <br>
     <%= f.input :password, required: true %>

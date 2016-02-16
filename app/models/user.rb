@@ -28,7 +28,28 @@ class User
     :posjoinprogramdetails,
     :sustainstraws,
     :sustainbags,
-    :sustaingrinds
+    :sustaingrinds,
+    :sustaincutlery,
+    :sustainlocalsupport,
+    :sustainbuylocal,
+    :sustaincups,
+    :sustainenergy,
+    :sustainfinance,
+    :sustainhomegrown,
+    :sustainrecycle,
+    :sustainfoodwaste,
+    :sustainstrawscomments,
+    :sustainbagscomments,
+    :sustaingrindscomments,
+    :sustaincutlerycomments,
+    :sustainlocalsupportcomments,
+    :sustainbuylocalcomments,
+    :sustaincupscomments,
+    :sustainenergycomments,
+    :sustainfinancecomments,
+    :sustainhomegrowncomments,
+    :sustainrecyclecomments,
+    :sustainfoodwastecomments
 
 
   # IMPORTANT:
@@ -122,6 +143,7 @@ class User
 
   field :motivation, type: String
 
+
   field :postype, type: String
 
   field :posreusablebutton, :type => Boolean, :default => false
@@ -132,11 +154,56 @@ class User
 
   field :posjoinprogramdetails, type: String
 
+  
   field :sustainstraws, :type => Boolean, :default => false
+
+  field :sustainstrawscomments, :type => String
 
   field :sustaingrinds, :type => Boolean, :default => false
 
+  field :sustaingrindscomments, :type => String
+
   field :sustainbags, :type => Boolean, :default => false
+
+  field :sustainbagscomments, :type => String
+
+  field :sustainbuylocal, :type => Boolean, :default => false
+
+  field :sustainbuylocalcomments, :type => String
+
+  field :sustaincutlery, :type => Boolean, :default => false
+
+  field :sustaincutlerycomments, :type => String
+
+  field :sustaincups, :type => Boolean, :default => false
+
+  field :sustaincupscomments, :type => String
+
+  field :sustainlocalsupport, :type => Boolean, :default => false
+
+  field :sustainlocalsupportcomments, :type => String
+
+  field :sustainhomegrown, :type => Boolean, :default => false
+
+  field :sustainhomegrowncomments, :type => String
+
+  field :sustainrecycle, :type => Boolean, :default => false
+
+  field :sustainrecyclecomments, :type => String
+
+  field :sustainfoodwaste, :type => Boolean, :default => false
+
+  field :sustainfoodwastecomments, :type => String
+
+  field :sustainenergy, :type => Boolean, :default => false
+
+  field :sustainenergycomments, :type => String
+
+  field :sustainfinance, :type => Boolean, :default => false
+
+  field :sustainfinancecomments, :type => String
+
+
 
   has_many :cup_usages
 

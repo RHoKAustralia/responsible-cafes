@@ -90,6 +90,23 @@
   <p class="dashboard__motivation-heading">Why we joined Responsible Cafes:</p>
   <p class="dashboard__motivation"><%= @cafe.motivation %></p>
 <% end %>
+<div>
+  <% if @cafe.sustainbuylocal %>
+    <img src="/images/save-local.jpg" alt="support locals" title="<%= @cafe.sustainbuylocalcomments %>">
+  <% end %>
+  <% if @cafe.sustainbags %>
+    <img src="/images/save-bags.jpg" alt="sustainable bag use" title="<%= @cafe.sustainbagscomments %>">
+  <% end %>
+  <% if @cafe.sustainstraws %>
+    <img src="/images/save-straws.jpg" alt="sustainable straw use" title="<%= @cafe.sustainstrawscomments %>">
+  <% end %>
+  <% if @cafe.sustaincutlery %>
+    <img src="/images/save-spoons.jpg" alt="sustainable cutlery use" title="<%= @cafe.sustaincutlerycomments %>">
+  <% end %>
+  <% if @cafe.sustaingrinds %>
+    <img src="/images/save-grinds.jpg" alt="grounds composting" title="<%= @cafe.sustaingrindscomments %>">
+  <% end %>
+</div>
 <div class="dashboard__map">
   <div class="dashboard__map-graphic"></div>
   <div class="dashboard__address">
